@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-ub-QLb">
+                                <rect key="frame" x="180" y="54" width="240" height="24"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sR0-ub-QLb" secondAttribute="height" multiplier="10:1" id="JKS-RN-Fux"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AUD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-m8-XnK">
+                                <rect key="frame" x="255" y="108" width="91" height="39"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1CM-m8-XnK" secondAttribute="height" multiplier="7:3" id="z6g-N7-MTd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-mP-sw6">
+                                <rect key="frame" x="20" y="191" width="560" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b16-Eb-bn1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1CM-m8-XnK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BcI-3w-UDh"/>
+                            <constraint firstItem="sR0-ub-QLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U5S-1o-9aF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7rY-mP-sw6" secondAttribute="leading" id="jjZ-jp-ivk"/>
+                            <constraint firstItem="7rY-mP-sw6" firstAttribute="top" secondItem="1CM-m8-XnK" secondAttribute="bottom" constant="44" id="nur-YS-R7S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7rY-mP-sw6" secondAttribute="trailing" id="och-OU-RDI"/>
+                            <constraint firstItem="1CM-m8-XnK" firstAttribute="top" secondItem="sR0-ub-QLb" secondAttribute="bottom" constant="30" id="r33-jx-pm6"/>
+                            <constraint firstItem="sR0-ub-QLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="v0Z-wP-T0a"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="282"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="191" height="20"/>
+    </resources>
 </document>

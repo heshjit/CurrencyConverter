@@ -43,5 +43,26 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api.fixer.io</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

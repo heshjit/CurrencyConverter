@@ -13,6 +13,7 @@
 		C0F5C6FC1BC9456B00998B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F5C6FB1BC9456B00998B6B /* Assets.xcassets */; };
 		C0F5C6FF1BC9456B00998B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F5C6FD1BC9456B00998B6B /* LaunchScreen.storyboard */; };
 		C0F5C70A1BC9456B00998B6B /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5C7091BC9456B00998B6B /* CurrencyConverterTests.swift */; };
+		C0F5C7151BC9466800998B6B /* CurrencyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5C7141BC9466800998B6B /* CurrencyValue.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C0F5C7051BC9456B00998B6B /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F5C7091BC9456B00998B6B /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
 		C0F5C70B1BC9456B00998B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F5C7141BC9466800998B6B /* CurrencyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				C0F5C6FB1BC9456B00998B6B /* Assets.xcassets */,
 				C0F5C6FD1BC9456B00998B6B /* LaunchScreen.storyboard */,
 				C0F5C7001BC9456B00998B6B /* Info.plist */,
+				C0F5C7141BC9466800998B6B /* CurrencyValue.swift */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F5C7151BC9466800998B6B /* CurrencyValue.swift in Sources */,
 				C0F5C6F71BC9456B00998B6B /* ViewController.swift in Sources */,
 				C0F5C6F51BC9456B00998B6B /* AppDelegate.swift in Sources */,
 			);
@@ -387,6 +391,7 @@
 				C0F5C7101BC9456B00998B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0F5C7111BC9456B00998B6B /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +400,7 @@
 				C0F5C7131BC9456B00998B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
