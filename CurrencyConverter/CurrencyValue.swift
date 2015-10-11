@@ -38,7 +38,8 @@ class CurrencyValue {
         }
     }
     
-    func calculateRate(currencyType:String) -> Double{
-        return currencyRates[currencyType]!
+    func calculateRate(currencyType:String, toConvertValue:Double) -> Double{
+        let finalValue = toConvertValue * (currencyRates[currencyType]!)
+        return finalValue
     }
 };
