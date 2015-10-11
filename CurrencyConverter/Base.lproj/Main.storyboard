@@ -46,11 +46,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c7j-NL-j4Z">
-                                <rect key="frame" x="20" y="390" width="560" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TC8-8L-jaf" customClass="CustomPicker" customModule="CurrencyConverter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="278" width="560" height="100"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQP-JK-xjx">
+                                        <rect key="frame" x="67" y="15" width="426" height="70"/>
+                                        <animations/>
+                                    </pickerView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TC8-8L-jaf" secondAttribute="height" multiplier="6:1" constant="-40" id="hNB-5V-aOI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F4t-hP-aRL">
+                                <rect key="frame" x="20" y="426" width="560" height="40"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="c7j-NL-j4Z" secondAttribute="height" multiplier="14:1" id="GtA-06-A8p"/>
+                                    <constraint firstAttribute="width" secondItem="F4t-hP-aRL" secondAttribute="height" multiplier="14:1" id="XI1-Vs-IIS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,21 +74,26 @@
                         <animations/>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.78431372549019607" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="c7j-NL-j4Z" secondAttribute="leading" id="2bS-VD-ero"/>
-                            <constraint firstItem="c7j-NL-j4Z" firstAttribute="top" secondItem="7rY-mP-sw6" secondAttribute="bottom" constant="159" id="4Uf-Ie-EPJ"/>
+                            <constraint firstItem="TC8-8L-jaf" firstAttribute="top" secondItem="7rY-mP-sw6" secondAttribute="bottom" constant="47" id="1Il-1K-Wew"/>
                             <constraint firstItem="1CM-m8-XnK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BcI-3w-UDh"/>
+                            <constraint firstItem="TC8-8L-jaf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DRF-Hq-PJh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TC8-8L-jaf" secondAttribute="trailing" id="LRc-Ir-gBd"/>
                             <constraint firstItem="sR0-ub-QLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U5S-1o-9aF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="c7j-NL-j4Z" secondAttribute="trailing" id="YHs-tW-zJd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="F4t-hP-aRL" secondAttribute="leading" id="XZu-XS-olY"/>
+                            <constraint firstItem="F4t-hP-aRL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jOf-MK-hwM"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7rY-mP-sw6" secondAttribute="leading" id="jjZ-jp-ivk"/>
                             <constraint firstItem="7rY-mP-sw6" firstAttribute="top" secondItem="1CM-m8-XnK" secondAttribute="bottom" constant="44" id="nur-YS-R7S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F4t-hP-aRL" secondAttribute="trailing" id="oSg-Ma-GXk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7rY-mP-sw6" secondAttribute="trailing" id="och-OU-RDI"/>
+                            <constraint firstItem="F4t-hP-aRL" firstAttribute="top" secondItem="TC8-8L-jaf" secondAttribute="bottom" constant="48" id="or8-Kf-wnV"/>
                             <constraint firstItem="1CM-m8-XnK" firstAttribute="top" secondItem="sR0-ub-QLb" secondAttribute="bottom" constant="30" id="r33-jx-pm6"/>
                             <constraint firstItem="sR0-ub-QLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="v0Z-wP-T0a"/>
+                            <constraint firstItem="TC8-8L-jaf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y6r-15-eNQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="convertFromTextField" destination="7rY-mP-sw6" id="KQr-RP-deY"/>
-                        <outlet property="convertedValueLabel" destination="c7j-NL-j4Z" id="HVO-iq-qv4"/>
+                        <outlet property="convertedValueLabel" destination="F4t-hP-aRL" id="vBl-Ca-jEU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

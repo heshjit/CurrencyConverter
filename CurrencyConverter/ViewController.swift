@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var convertFromTextField: UITextField!
     @IBOutlet weak var convertedValueLabel: UILabel!
+
     
     let currency = CurrencyValue(baseCurrency: "AUD")
     
