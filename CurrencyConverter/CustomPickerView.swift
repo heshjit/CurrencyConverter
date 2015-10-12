@@ -14,7 +14,7 @@ protocol CustomPickerViewDeledate{
 
 class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    let currencyArray = ["CAD","EUR","GBP","JPY","USD"]
+    var currencyArray :[String] = []
     var selectedCurrency = "GBP"
     var pickerView = UIPickerView()
     var topIndicatorImageView = UIImageView()
@@ -25,7 +25,8 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        //pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        //Creating picker view
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.showsSelectionIndicator = false
@@ -38,15 +39,16 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         pickerView.transform = rotate
         addSubview(pickerView)
         
+        //Create indicator images
         topIndicatorImageView.image = UIImage(named: "IndicatorTop")!
         bottomIndicatorImageView.image = UIImage(named: "IndicatorBottom")!
         addSubview(topIndicatorImageView)
         addSubview(bottomIndicatorImageView)
     }
 
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    func assignDelegate(withDelegat delegate: CustomPickerViewDeledate, currencyFetchList currencyList: [String]){
+        self.delegate = delegate
+        self.currencyArray = currencyList
     }
     
     override func layoutSubviews() {
@@ -59,26 +61,33 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         return self.frame.size
     }
     
+    //MARK: PickerViewDataSource
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return currencyArray.count
     }
     
+    //MARK: PickerView Delegate
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return self.frame.size.height
-        //return 300
     }
     
     func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         let frameWidth = Int(self.frame.size.width)
-        let width = (frameWidth-25)/3
+        let width = (frameWidth)/2
         return CGFloat(width)
-        //return 50.00
     }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         label.text = currencyArray[row]
-        label.font = UIFont.systemFontOfSize(35.0)
+        
+        let boldHelviticaFont = UIFont(name: "Helvetica", size: 56)?.fontDescriptor().fontDescriptorWithSymbolicTraits(UIFontDescriptorSymbolicTraits.TraitBold)
+        label.font = UIFont(descriptor: boldHelviticaFont!, size: 56)
+        
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 1
@@ -97,7 +106,6 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         if delegate != nil{
             delegate?.currencyTypeDidChange()
         }
-        print(selectedCurrency)
     }
 
 }

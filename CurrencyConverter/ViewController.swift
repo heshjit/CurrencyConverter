@@ -17,18 +17,24 @@ class ViewController: UIViewController, CustomPickerViewDeledate {
     
     @IBOutlet weak var currencyPicker: CustomPickerView!
     
+    let currencyArray:[String] = ["CAD", "EUR", "GBP", "JPY", "USD"]
+    
     let currency = CurrencyValue(baseCurrency: "AUD")
     var toConvertCurrencyType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        currencyPicker.delegate = self
+        //Initializing the Custom Picker View with delegate and currecy array
+        currencyPicker.assignDelegate(withDelegat: self, currencyFetchList: currencyArray)
+        
+        //Initially toring picker selected currency type locally
         toConvertCurrencyType = currencyPicker.selectedCurrency
-        print("currency type \(toConvertCurrencyType)")
-        currency.fetchCurrentCurrencyValue()
+        
+        //Fetching rates for all the currency in array wrt base type "AUD"
+        currency.fetchCurrentCurrencyValue(forFetchList: currencyArray)
 
+        //To fetch and display rates once the user finishes entering value in the text box
         currencyInputTextField.addTarget(self, action: "ConvertValue", forControlEvents: .EditingDidEndOnExit)
         
     }
@@ -40,27 +46,28 @@ class ViewController: UIViewController, CustomPickerViewDeledate {
     
     //MARK: CustomPickerViewDeledate delegate functions
     func currencyTypeDidChange() {
+        
+        //User moved the picker and selected new currency type.
         toConvertCurrencyType = currencyPicker.selectedCurrency
-        print("FRom delegate \(toConvertCurrencyType)")
+        
+        //Recalculate the converted value for selected type
         ConvertValue()
     }
     
     //MARK: Actions
     func ConvertValue(){
-        //let input = currencyInputTextField.text
         
         if (currencyInputTextField.text!.isEmpty){
             print("Empty Text box")
         }
         else {
-            let convertedValueAsString = currency.calculateRate(toConvertCurrencyType,toConvertValue: Double(currencyInputTextField.text!)!)
-            print(convertedValueAsString)
+            let convertedValueAsString = currency.calculateRate(forType: toConvertCurrencyType, fromValue: Double(currencyInputTextField.text!)!)
             
+            //To Format the calculated value as per the currency type
             let _currencyFormatter : NSNumberFormatter = NSNumberFormatter()
             _currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
             _currencyFormatter.currencyCode = toConvertCurrencyType
             let convertValueWithFormat = _currencyFormatter.stringFromNumber(convertedValueAsString)
-            print(convertValueWithFormat)
             currencyOutputLabel.text = convertValueWithFormat
         }
     }
