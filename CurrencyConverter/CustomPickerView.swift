@@ -42,7 +42,6 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         bottomIndicatorImageView.image = UIImage(named: "IndicatorBottom")!
         addSubview(topIndicatorImageView)
         addSubview(bottomIndicatorImageView)
-        
     }
 
     

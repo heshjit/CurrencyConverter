@@ -27,7 +27,6 @@ class ViewController: UIViewController, CustomPickerViewDeledate {
         currencyPicker.delegate = self
         toConvertCurrencyType = currencyPicker.selectedCurrency
         print("currency type \(toConvertCurrencyType)")
-
         currency.fetchCurrentCurrencyValue()
 
         currencyInputTextField.addTarget(self, action: "ConvertValue", forControlEvents: .EditingDidEndOnExit)
