@@ -96,6 +96,13 @@ class ViewController: UIViewController, CustomPickerViewDeledate, UITextFieldDel
         }
         return false
     }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
+        textField.text = ""
+        currentString = ""
+        return true
+    }
+
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         convertValue()

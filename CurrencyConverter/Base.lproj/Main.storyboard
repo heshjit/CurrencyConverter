@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-ub-QLb">
-                                <rect key="frame" x="180" y="54" width="240" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-ub-QLb">
+                                <rect key="frame" x="200" y="54" width="200" height="20"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sR0-ub-QLb" secondAttribute="height" multiplier="10:1" id="JKS-RN-Fux"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Amount here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-mP-sw6">
-                                <rect key="frame" x="20" y="191" width="560" height="61"/>
+                                <rect key="frame" x="20" y="190" width="560" height="61"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.78431372549019607" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -40,7 +40,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TC8-8L-jaf" customClass="CustomPickerView" customModule="CurrencyConverter" customModuleProvider="target">
-                                <rect key="frame" x="20" y="298.5" width="560" height="125"/>
+                                <rect key="frame" x="20" y="298" width="560" height="125"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.7843137255" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -51,7 +51,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F4t-hP-aRL">
-                                <rect key="frame" x="20" y="446.5" width="560" height="61"/>
+                                <rect key="frame" x="20" y="446" width="560" height="61"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F4t-hP-aRL" secondAttribute="height" multiplier="14:1" constant="-294" id="XI1-Vs-IIS"/>
@@ -60,8 +60,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AUD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-m8-XnK">
-                                <rect key="frame" x="226" y="108" width="148" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-m8-XnK">
+                                <rect key="frame" x="222" y="104" width="156" height="64.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1CM-m8-XnK" secondAttribute="height" multiplier="7:3" constant="5.6666666666666572" id="z6g-N7-MTd"/>
