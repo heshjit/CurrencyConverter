@@ -44,7 +44,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TC8-8L-jaf" customClass="CustomPickerView" customModule="CurrencyConverter" customModuleProvider="target">
                                 <rect key="frame" x="20" y="278" width="560" height="110"/>
@@ -86,8 +86,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="convertFromTextField" destination="7rY-mP-sw6" id="KQr-RP-deY"/>
-                        <outlet property="convertedValueLabel" destination="F4t-hP-aRL" id="vBl-Ca-jEU"/>
+                        <outlet property="currencyInputTextField" destination="7rY-mP-sw6" id="zmb-bR-q03"/>
+                        <outlet property="currencyOutputLabel" destination="F4t-hP-aRL" id="kFs-kP-czN"/>
+                        <outlet property="currencyPicker" destination="TC8-8L-jaf" id="Iqq-n1-duN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

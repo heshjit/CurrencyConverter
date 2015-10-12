@@ -8,20 +8,20 @@
 
 import UIKit
 
+protocol CustomPickerViewDeledate{
+    func currencyTypeDidChange()
+}
+
 class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     let currencyArray = ["CAD","EUR","GBP","JPY","USD"]
-    var selectedCurrency = ""
+    var selectedCurrency = "GBP"
     var pickerView = UIPickerView()
     var topIndicatorImageView = UIImageView()
     var bottomIndicatorImageView = UIImageView()
+    
+    //MARK: Delegate
+    var delegate: CustomPickerViewDeledate? = nil
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,6 +44,7 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         addSubview(bottomIndicatorImageView)
         
     }
+
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -94,6 +95,9 @@ class CustomPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCurrency = currencyArray[row]
+        if delegate != nil{
+            delegate?.currencyTypeDidChange()
+        }
         print(selectedCurrency)
     }
 
